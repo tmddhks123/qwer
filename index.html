@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="차예준 — 웹 프론트엔드와 프로그래밍을 공부하며 기록하는 개인 사이트입니다."
+    />
+    <title>차예준 | Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a href="#" class="logo" aria-label="차예준, 홈으로">
+          <span class="logo-prompt" aria-hidden="true">~/</span>
+          <span class="logo-text">차예준</span>
+        </a>
+
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-nav-toggle
+        >
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="visually-hidden">메뉴 열기</span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" data-nav>
+          <ul class="nav-list">
+            <li><a href="#about">소개</a></li>
+            <li><a href="#resume">경력</a></li>
+            <li><a href="#projects">프로젝트</a></li>
+            <li><a href="#contact">연락</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-layout">
+          <div class="hero-main" data-reveal>
+            <p class="hero-line" aria-hidden="true">
+              <span class="hero-line-user">guest@portfolio</span><span class="hero-line-path">:~$</span><span class="hero-line-cmd"> whoami</span>
+            </p>
+            <h1 id="hero-title" class="hero-title">
+              차예준
+              <span class="hero-title-sub">프로그래밍과 웹을 배우고 만듭니다.</span>
+            </h1>
+            <p class="hero-lead">
+              바닐라 HTML·CSS·JavaScript로 이 페이지를 구성했습니다. 배운 내용과
+              작은 프로젝트를 정리해 두는 개발자용 개인 사이트입니다.
+            </p>
+            <ul class="stack-list" aria-label="주로 사용하는 기술">
+              <li>TypeScript</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Python</li>
+              <li>SQL</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#about">소개</a>
+              <a class="btn btn-outline" href="#projects">프로젝트</a>
+              <a class="btn btn-ghost" href="#contact">연락</a>
+            </div>
+          </div>
+
+          <aside class="code-panel" aria-label="예시 코드" data-reveal>
+            <div class="code-panel-bar">
+              <span class="code-panel-dots" aria-hidden="true"></span>
+              <span class="code-panel-title">about.ts</span>
+            </div>
+            <pre class="code-panel-body"><code><span class="tok-cmt">/**
+ * @file about.ts
+ * @author 차예준
+ * @description
+ *   프로필 메타, 히어로에 표시
+ */</span>
+
+<span class="tok-kw">type</span> <span class="tok-type">Language</span> =
+  | <span class="tok-str">"TypeScript"</span>
+  | <span class="tok-str">"JavaScript"</span>
+  | <span class="tok-str">"HTML"</span>
+  | <span class="tok-str">"CSS"</span>
+  | <span class="tok-str">"Python"</span>
+  | <span class="tok-str">"C"</span>
+  | <span class="tok-str">"SQL"</span>
+  | <span class="tok-str">"Bash"</span>;
+
+<span class="tok-kw">interface</span> <span class="tok-type">DevProfile</span> {
+  <span class="tok-prop">name</span>: <span class="tok-type">string</span>;
+  <span class="tok-prop">role</span>: <span class="tok-type">string</span>;
+  <span class="tok-prop">languages</span>: <span class="tok-kw">readonly</span> <span class="tok-type">Language</span>[];
+  <span class="tok-prop">toolchain</span>: <span class="tok-kw">readonly</span> <span class="tok-type">string</span>[];
+  <span class="tok-prop">paradigms</span>:
+    <span class="tok-kw">readonly</span> (<span class="tok-str">"OOP"</span> | <span class="tok-str">"FP"</span>
+    | <span class="tok-str">"imperative"</span>)[];
+}
+
+<span class="tok-kw">export const</span> <span class="tok-def">profile</span>: <span class="tok-type">DevProfile</span> = {
+  <span class="tok-prop">name</span>: <span class="tok-str">"차예준"</span>,
+  <span class="tok-prop">role</span>: <span class="tok-str">"student-developer"</span>,
+  <span class="tok-prop">languages</span>: [
+    <span class="tok-str">"TypeScript"</span>, <span class="tok-str">"JavaScript"</span>, <span class="tok-str">"HTML"</span>, <span class="tok-str">"CSS"</span>,
+    <span class="tok-str">"Python"</span>, <span class="tok-str">"C"</span>, <span class="tok-str">"SQL"</span>, <span class="tok-str">"Bash"</span>,
+  ] <span class="tok-kw">as const</span>,
+  <span class="tok-prop">toolchain</span>: [
+    <span class="tok-str">"Node"</span>, <span class="tok-str">"Git"</span>, <span class="tok-str">"VS Code"</span>,
+    <span class="tok-str">"Chrome DevTools"</span>,
+  ] <span class="tok-kw">as const</span>,
+  <span class="tok-prop">paradigms</span>: [<span class="tok-str">"OOP"</span>, <span class="tok-str">"imperative"</span>],
+} <span class="tok-kw">satisfies</span> <span class="tok-type">DevProfile</span>;
+
+<span class="tok-kw">export const</span> <span class="tok-def">repoMeta</span> = {
+  <span class="tok-prop">stack</span>:
+    <span class="tok-str">"vanilla — no framework on this page"</span>,
+  <span class="tok-prop">lineCountApprox</span>: <span class="tok-num">400</span>,
+} <span class="tok-kw">as const</span>;
+
+<span class="tok-cmt">// 이 파일은 UI용 스니펫이며, 실제 빌드 산출물은 아닙니다.</span></code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about" class="section about" aria-labelledby="about-title">
+        <div class="container about-wrap">
+          <header class="about-header">
+            <h2 id="about-title" class="section-title" data-reveal>소개</h2>
+            <p class="section-lead about-lead" data-reveal>
+              안녕하세요, <strong>차예준</strong>입니다. 웹과 프로그래밍을 배우며
+              작은 결과물을 쌓아 가고 있고, 이 페이지는 그 과정을 정리해 두는
+              공간입니다. 아래 사진과 글을 통해 저를 조금 더 가깝게 느껴 주시면
+              좋겠습니다.
+            </p>
+          </header>
+
+          <div class="about-gallery" data-reveal>
+            <figure class="about-photo">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=720&q=80"
+                alt="노트북 화면에 코드 에디터가 열려 있는 모습"
+                width="720"
+                height="480"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>매일 조금씩 코드를 읽고 쓰며 익숙해지는 중입니다.</figcaption>
+            </figure>
+            <figure class="about-photo">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=720&q=80"
+                alt="팀원들이 노트북을 두고 협업하는 회의 장면"
+                width="720"
+                height="480"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>혼자만이 아니라, 함께 맞춰 가는 방식도 배우고 있습니다.</figcaption>
+            </figure>
+            <figure class="about-photo">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=720&q=80"
+                alt="책상 위 노트북과 메모지, 펜이 놓인 공부 환경"
+                width="720"
+                height="480"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>기록과 복습을 습관으로 두려고 노력합니다.</figcaption>
+            </figure>
+          </div>
+
+          <div class="about-blocks">
+            <article class="about-block" data-reveal>
+              <h3 class="about-block-title">어떤 사람인가요</h3>
+              <p>
+                호기심이 많고, 한 번 궁금해지면 직접 해 보고 싶어 하는 편입니다.
+                수학·논리 퍼즐을 좋아해서 프로그래밍의 ‘문제를 나누어 푼다’는
+                과정에 자연스럽게 끌렸고, 지금은 웹 프론트엔드 쪽에 시간을
+                많이 쏟고 있습니다.
+              </p>
+            </article>
+            <article class="about-block" data-reveal>
+              <h3 class="about-block-title">관심 있는 것들</h3>
+              <p>
+                화면이 어떤 구조로 나뉘는지(레이아웃), 사용자가 읽기 쉬운 타이포와
+                색(가독성), 그리고 모바일과 PC에서 모두 잘 보이게 만드는
+                반응형에 관심이 있습니다. 접근성과 성능은 아직 배워 가는 단계지만,
+                의식하고 코드에 반영하려고 합니다.
+              </p>
+            </article>
+            <article class="about-block" data-reveal>
+              <h3 class="about-block-title">지금 하고 있는 일</h3>
+              <p>
+                HTML·CSS·JavaScript로 정적 페이지를 직접 구성해 보고, 폼 검증이나
+                간단한 DOM 조작 같은 바닐라 JS 패턴을 익히고 있습니다. Git으로
+                버전을 남기고, README에 의도와 실행 방법을 적는 연습도 병행
+                중입니다.
+              </p>
+            </article>
+            <article class="about-block" data-reveal>
+              <h3 class="about-block-title">앞으로</h3>
+              <p>
+                작은 토이 프로젝트를 꾸준히 추가하고, 배운 것을 짧은 글이나
+                스니펫으로 정리해 이 사이트에 올릴 계획입니다. 취업·인턴·스터디 등
+                함께할 기회가 있다면 <a href="#contact">연락</a> 주시면 감사하겠습니다.
+              </p>
+            </article>
+          </div>
+
+          <aside class="about-aside" data-reveal>
+            <h3 class="about-aside-title">한눈에 보기</h3>
+            <dl class="about-facts">
+              <div>
+                <dt>이름</dt>
+                <dd>차예준</dd>
+              </div>
+              <div>
+                <dt>집중 분야</dt>
+                <dd>웹 마크업 · 스타일 · 클라이언트 스크립트</dd>
+              </div>
+              <div>
+                <dt>툴</dt>
+                <dd>VS Code, Git, 브라우저 DevTools</dd>
+              </div>
+              <div>
+                <dt>언어</dt>
+                <dd>한국어 (학습 중: 영어로 문서 읽기)</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section id="resume" class="section resume" aria-labelledby="resume-title">
+        <div class="container resume-wrap">
+          <header class="section-head" data-reveal>
+            <h2 id="resume-title" class="section-title">경력</h2>
+            <p class="section-sub">
+              근무·인턴·동아리 등 시간을 쏟았던 경험을 최신 순으로 정리했습니다.
+            </p>
+          </header>
+
+          <ol class="timeline" data-reveal>
+            <li class="timeline-item">
+              <p class="timeline-period">2024.03 — 현재</p>
+              <h3 class="timeline-title">OO고등학교 · 프로그래밍 동아리</h3>
+              <p class="timeline-body">
+                동아리 웹사이트 리뉴얼, 신입 부원 대상 HTML/CSS 기초 세션 진행.
+                GitHub로 과제와 자료를 공유했습니다.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-period">2023.07 — 2023.08 (2개월)</p>
+              <h3 class="timeline-title">(주)예시테크 · 여름 방학 인턴</h3>
+              <p class="timeline-body">
+                사내 위키 마크업 수정, 간단한 대시보드 화면 목업 제작 보조.
+                Figma 시안을 HTML/CSS로 옮기는 작업을 경험했습니다.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-period">2022.06 — 2023.02</p>
+              <h3 class="timeline-title">지역 도서관 · 주말 정리 아르바이트</h3>
+              <p class="timeline-body">
+                학업과 병행하며 일정 관리와 고객 응대에 익숙해졌습니다.
+              </p>
+            </li>
+          </ol>
+
+          <header class="section-head resume-subhead" data-reveal>
+            <h2 id="awards-title" class="section-title">수상 · 공모 · 활동</h2>
+            <p class="section-sub">
+              대회·공모전·교내외 활동에서 받은 상과 기록입니다.
+            </p>
+          </header>
+
+          <ol class="timeline timeline--compact" data-reveal>
+            <li class="timeline-item">
+              <p class="timeline-period">2024.11</p>
+              <h3 class="timeline-title">전국 고등학생 해커톤 · 장려상</h3>
+              <p class="timeline-body">
+                “지역 상권 알림” 주제, 4인 팀에서 프론트엔드 담당. 발표 자료·UI
+                시연을 맡았습니다.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-period">2024.05</p>
+              <h3 class="timeline-title">교내 SW 경진대회 · 은상</h3>
+              <p class="timeline-body">
+                바닐라 JS로 만든 미니 게임 부문. 심사 피드백을 반영해 사운드와
+                난이도 조절을 개선했습니다.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-period">2023.09</p>
+              <h3 class="timeline-title">OO시 청소년 공모전 · 입선</h3>
+              <p class="timeline-body">
+                앱 아이디어 및 와이어프레임 제출. 기획 단계에서 사용자 시나리오를
+                구체화하는 연습이 되었습니다.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-period">2023</p>
+              <h3 class="timeline-title">정보올림피아드 시·도부 예선 통과</h3>
+              <p class="timeline-body">
+                본선 진출까지는 아니었으나, 알고리즘·자료구조 기초를 다지는 계기가
+                되었습니다.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <h2 id="projects-title" class="section-title">프로젝트</h2>
+            <p class="section-sub">저장소와 문서를 중심으로 정리한 작업 목록입니다.</p>
+          </div>
+
+          <ul class="project-list">
+            <li class="project-row" data-reveal>
+              <article class="project-row-inner">
+                <div class="project-row-main">
+                  <h3 class="project-row-title">Analytics Hub</h3>
+                  <p class="project-row-desc">
+                    지표 요약과 필터 UI. 컴포넌트 구조와 상태 관리 연습용.
+                  </p>
+                  <ul class="project-tags" aria-label="기술 태그">
+                    <li>TypeScript</li>
+                    <li>Chart</li>
+                  </ul>
+                </div>
+                <a href="#" class="project-row-link">문서</a>
+              </article>
+            </li>
+
+            <li class="project-row" data-reveal>
+              <article class="project-row-inner">
+                <div class="project-row-main">
+                  <h3 class="project-row-title">Nimbus Commerce</h3>
+                  <p class="project-row-desc">
+                    상품 목록·장바구니 흐름을 다룬 프론트 프로토타입.
+                  </p>
+                  <ul class="project-tags" aria-label="기술 태그">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                  </ul>
+                </div>
+                <a href="#" class="project-row-link">소스</a>
+              </article>
+            </li>
+
+            <li class="project-row" data-reveal>
+              <article class="project-row-inner">
+                <div class="project-row-main">
+                  <h3 class="project-row-title">Orbit Workspace</h3>
+                  <p class="project-row-desc">
+                    협업 도구 랜딩 페이지 마크업·반응형 레이아웃 실습.
+                  </p>
+                  <ul class="project-tags" aria-label="기술 태그">
+                    <li>반응형</li>
+                    <li>a11y</li>
+                  </ul>
+                </div>
+                <a href="#" class="project-row-link">문서</a>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-intro" data-reveal>
+            <h2 id="contact-title" class="section-title">연락</h2>
+            <p class="section-lead">
+              이슈나 질문은 메일 또는 아래 폼으로 보내 주세요. 가능한 빨리
+              확인하겠습니다.
+            </p>
+            <ul class="contact-meta">
+              <li>
+                <span class="contact-meta-label">EMAIL</span>
+                <a href="mailto:hello@example.com">hello@example.com</a>
+              </li>
+              <li>
+                <span class="contact-meta-label">LOCATION</span>
+                <span>Seoul, KR</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form" data-contact-form novalidate data-reveal>
+            <div class="form-row">
+              <label for="name">이름</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                minlength="2"
+                placeholder="성함"
+              />
+              <p class="field-error" data-error-for="name" hidden></p>
+            </div>
+            <div class="form-row">
+              <label for="email">이메일</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="name@example.com"
+              />
+              <p class="field-error" data-error-for="email" hidden></p>
+            </div>
+            <div class="form-row">
+              <label for="message">메시지</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                minlength="10"
+                placeholder="내용을 입력해 주세요."
+              ></textarea>
+              <p class="field-error" data-error-for="message" hidden></p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">전송</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-copy">
+          <span class="footer-prompt" aria-hidden="true">$ </span>©
+          <span data-year></span> 차예준
+        </p>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com" rel="noopener noreferrer" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
